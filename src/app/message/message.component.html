@@ -1,0 +1,22 @@
+<ion-item *ngIf="message" [routerLink]="'/message/' + message.id" [detail]="false">
+  <!-- <div slot="start" [class]="!message.read ? 'dot dot-gris' : 'dot'"></div> -->
+  <ion-icon class="dot-check" style="font-size: 32px; margin-right: 10px;" name="checkmark-circle"></ion-icon>
+  <ion-label class="ion-text-wrap">
+    <h2>
+      {{ message.fromName }}
+      <span class="date">
+        <ion-icon aria-hidden="true" name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
+      </span>
+    </h2>
+
+    <h3>{{ message.subject }}</h3>
+    <p>
+      {{ message.descripcion }}
+    </p>
+
+    <hr/>
+    <ion-icon class="date" style="font-size: 32px; margin-right: 10px;" name="star"></ion-icon>
+    <ion-icon class="date" style="font-size: 32px; margin-right: 10px;" name="heart"></ion-icon>
+    <ion-icon class="date" style="font-size: 32px; margin-right: 10px;" name="heart-dislike"></ion-icon>
+  </ion-label>
+  </ion-item>

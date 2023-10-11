@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        [text]="getBackButtonText()"
+        defaultHref="/"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="message">
+  <ion-item>
+    <!-- <ion-icon aria-hidden="true" name="person-circle" color="primary"></ion-icon> -->
+
+    <ion-label class="ion-text-wrap">
+      <h2>
+        {{ message.fromName }}<br/>
+        <span class="date">
+          <ion-icon style="font-size: 32px" name="checkmark-circle"></ion-icon>
+          <ion-icon style="font-size: 32px" name="heart-dislike"></ion-icon>
+          <ion-icon style="font-size: 32px" name="heart"></ion-icon>
+          <ion-icon style="font-size: 32px" name="star"></ion-icon>
+        </span>
+      </h2>
+    </ion-label>
+  </ion-item>
+
+  <div class="ion-padding">
+    <h1>{{ message.subject }}</h1>
+    <p>{{ message.descripcion }}</p>
+
+    <div *ngIf="message.variante">
+      Variante 🪄
+      <p>{{ message.variante }}</p>
+    </div>
+
+    <div *ngIf="message.positivo1">
+      Lo más 👍
+      <p>{{ message.positivo1 }}</p>
+    </div>
+
+    <div *ngIf="message.positivo2">
+      <p>{{ message.positivo2 }}</p>
+    </div>
+
+    <div *ngIf="message.positivo3">
+      <p>{{ message.positivo3 }}</p>
+    </div>
+
+    <div *ngIf="message.negativo1">
+      Lo menos 👎
+      <p>{{ message.negativo1 }}</p>
+    </div>
+
+    <div *ngIf="message.negativo2">
+      <p>{{ message.negativo2 }}</p>
+    </div>
+
+    <div *ngIf="message.negativo3">
+      <p>{{ message.negativo3 }}</p>
+    </div>
+
+    <div *ngIf="message.imagen" style="text-align: center;">
+      <img [src]="message.imagen" alt="imagen" srcset="">
+    </div>
+
+    <div *ngIf="message.imagen2" style="text-align: center;">
+      <img [src]="message.imagen2" alt="imagen" srcset="">
+    </div>
+    
+  </div>
+</ion-content>
